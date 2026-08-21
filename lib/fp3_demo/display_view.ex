@@ -48,21 +48,17 @@ defmodule Fp3Demo.DisplayView do
           text("Emerge on Fairphone 3")
         ),
         el([padding(4), Font.size(58)], text("Powered by Nerves")),
+        el([padding(4), Font.size(48)], text("Buncha rows to have something to scroll")),
         column(
           [
-            padding(10),
+            spacing(10),
             Font.size(40),
             scrollbar_y(),
             height(fill()),
             width(fill()),
-            Font.color(color(:white)),
-            Background.color(color_rgba(0, 0, 0, 0)),
-            Border.shadow(offset: {20, 20}, blur: 24, color: color_rgba(15, 23, 42, 0.75))
+            Font.color(color(:white))
           ],
-          [
-            el([padding(4), Font.size(48)], text("Buncha rows to have something to scroll"))
-            | Enum.map(1..100, fn row -> item(text("Row #{row}")) end)
-          ]
+          Enum.map(1..100, fn row -> item(text("Row #{row}")) end)
         )
       ]
     )
@@ -75,7 +71,7 @@ defmodule Fp3Demo.DisplayView do
         padding(20),
         Background.color(color(:slate, 600)),
         Border.rounded(8),
-        Border.shadow(offset: {12, 12}, blur: 18, color: color_rgba(15, 23, 42, 0.75))
+        Border.shadow(offset: {8, 8}, blur: 12, color: color_rgba(15, 23, 42, 0.75))
       ],
       content
     )
