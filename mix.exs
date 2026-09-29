@@ -55,8 +55,8 @@ defmodule Fp3Demo.MixProject do
        github: "mlainez/nerves_system_fp3", runtime: false, targets: :fp3, nerves: [compile: true]},
 
       # Emerge DRM/GPU renderer.
-      {:solve, "~> 0.2.2"},
-      {:emerge, path: "../../emerge-headless"},
+      {:solve, "~> 0.3.0"},
+      {:emerge, "~> 0.4.0"},
       {:rustler, "~> 0.38.0", runtime: false},
 
       # Qualcomm bring-up: each of these owns one slice of it.
