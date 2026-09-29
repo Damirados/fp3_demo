@@ -52,12 +52,11 @@ defmodule Fp3Demo.MixProject do
       # version updates, please review their release notes in case
       # changes to your application are needed.
       {:nerves_system_fp3,
-       path: "../nerves_system_fp3", runtime: false, targets: :fp3, nerves: [compile: true]},
+       github: "mlainez/nerves_system_fp3", runtime: false, targets: :fp3, nerves: [compile: true]},
 
-      # Emerge DRM/GPU renderer. These sibling paths keep the application,
-      # Elixir frame contract, and Rust frame contract on the same development revision.
+      # Emerge DRM/GPU renderer.
+      {:solve, "~> 0.2.2"},
       {:emerge, path: "../../emerge-headless"},
-      {:video_interop, path: "../../video_interop", override: true},
       {:rustler, "~> 0.38.0", runtime: false},
 
       # Qualcomm bring-up: each of these owns one slice of it.

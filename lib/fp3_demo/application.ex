@@ -33,7 +33,7 @@ defmodule Fp3Demo.Application do
     end
   else
     defp target_children() do
-      [Fp3Demo.DisplayView.child_spec([])]
+      [Fp3Demo.UI.App.child_spec([]), Fp3Demo.DisplayView.child_spec([])]
     end
   end
 end

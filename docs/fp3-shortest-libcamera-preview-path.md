@@ -574,9 +574,11 @@ The project already has:
 
 ```elixir
 {:emerge, path: "../../emerge-headless"},
-{:video_interop, path: "../../video_interop", override: true},
 {:rustler, "~> 0.38.0", runtime: false}
 ```
+
+Emerge and the Membrane components declare their own versioned VideoInterop dependencies; the
+application does not duplicate that transitive dependency.
 
 Align the Rustler override with the sibling camera project if dependency resolution requires it:
 
@@ -584,7 +586,8 @@ Align the Rustler override with the sibling camera project if dependency resolut
 {:rustler, "~> 0.38.0", override: true}
 ```
 
-`membrane_libcamera` pulls in `membrane_video_interop` and `video_interop`, but keeping the application on the same explicit local revisions avoids a split Elixir/Rust frame contract during development.
+`membrane_libcamera` pulls in `membrane_video_interop` and `video_interop`; their compatible
+version constraints keep the Elixir and Rust frame contracts aligned.
 
 ### 5.1 Native build requirements
 

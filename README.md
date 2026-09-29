@@ -12,12 +12,10 @@ Adreno 506/a5xx does not have a Mesa Turnip driver.
 This checkout expects these sibling repositories:
 
 - `../nerves_system_fp3` — FP3 kernel, firmware, Mesa, and runtime packages;
-- `../../emerge-headless` — Emerge DRM renderer despite the historical repo name;
-- `../../video_interop` — shared DMA-BUF frame contract; and
+- `../../emerge-headless` — Emerge DRM renderer despite the historical repo name; and
 - `../libcamera` — active libcamera development tree for future camera preview.
 
-The path dependencies in `mix.exs` deliberately keep Emerge and VideoInterop on
-the same development revisions.
+Emerge resolves its VideoInterop dependency from Hex and crates.io.
 
 ## Build and test
 
